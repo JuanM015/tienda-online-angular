@@ -1,0 +1,38 @@
+.container {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(4, 20vw);
+    height: auto;
+    justify-content: space-around;
+    margin-bottom: 15em;
+    border: black 2px solid;
+    margin: 40px;
+}
+
+.example-large-box:hover {
+    background: rgba(0,0,0,0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
+}
+
+.example-large-box {
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+example-large-box {
+    height: 350px;
+    width: 200px;
+  }
+
+  article {
+    margin: 5em;
+  }
+
+  .miBoton {
+      background: #5493b3;
+  }
+    

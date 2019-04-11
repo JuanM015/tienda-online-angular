@@ -1,3 +1,10 @@
-<p>
-  detalle-producto works!
-</p>
+<div class="container">
+
+<article *ngFor="let producto of productos" class="example-large-box mat-elevation-z4">
+  <img src="{{producto.imagen_url}}">
+  <h2>{{producto.producto}}</h2>
+  <h4>Precio: {{producto.precio}}</h4>
+  <button mat-button href="#" class="miBoton">Agregar al carrito</button>
+</article>
+
+</div>

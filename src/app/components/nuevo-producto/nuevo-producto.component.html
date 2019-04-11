@@ -1,0 +1,10 @@
+<p>
+  Creación de nuevo producto
+</p>
+
+<form #form="ngForm" (submit)="guardarProducto(form)" autocomplete="off">
+  <input type="text" name="producto" #producto = "ngModel" [(ngModel)] = "api.formData.producto" placeholder="Producto">
+  <input type="text" name="precio" #precio="ngModel" [(ngModel)] = "api.formData.precio" placeholder="Precio">
+  <input type="text" name="imagen_url" #imagen_url= "ngModel" [(ngModel)] = "api.formData.imagen_url" placeholder="Imagen">
+  <button type="submit" [disabled] = "form.invalid">Crear producto</button>
+</form>

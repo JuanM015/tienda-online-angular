@@ -13,6 +13,26 @@ import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { Page404Component } from './components/errors/page404/page404.component';
 
+
+// SERVICIOS DE AUTENTIFICACIÓN
+import { AuthService } from './services/auth.service';
+
+import { ApiService } from './services/api.service';
+
+// VARIBLES DE ENTORNO
+import { environment } from '../environments/environment';
+
+// FIREBASE 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatIconModule, MatDividerModule, MatTabsModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatStepperModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatTableModule, MatListModule, MatSliderModule, MatSidenavModule} from '@angular/material';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +44,36 @@ import { Page404Component } from './components/errors/page404/page404.component'
     ListaProductosComponent,
     LoginComponent,
     RegisterComponent,
-    Page404Component
+    Page404Component,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatToolbarModule, 
+    MatCardModule, 
+    MatIconModule, 
+    MatDividerModule, 
+    MatTabsModule, 
+    MatTooltipModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatStepperModule,
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    MatSelectModule, 
+    MatTableModule, 
+    MatListModule, 
+    MatSliderModule, 
+    MatSidenavModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ApiService, AuthService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
